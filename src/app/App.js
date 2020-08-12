@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import './app.less';
-import {Route, BrowserRouter} from "react-router-dom";
+import {Route, Switch, BrowserRouter} from "react-router-dom";
 import Home from "./compnents/home/Home";
 import Header from "./compnents/header/Header";
+import Calculator from "./compnents/calculator/Calculator";
 
 class App extends Component {
   render() {
@@ -10,7 +11,10 @@ class App extends Component {
       <div className="app">
         <BrowserRouter>
             <Header />
-          <Route exact path='/' component={Home}/>
+            <Switch>
+                <Route exact path='/' component={Home}/>
+                <Route path='/calculator' component={Calculator} />
+            </Switch>
         </BrowserRouter>
       </div>
     );

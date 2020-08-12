@@ -14,7 +14,7 @@ const Home = () => {
                     <Link to={'/calculator'}><Avatar size={256} src={calculatorImg} /></Link>
                 </Col>
                 <Col span={12}>
-                    <Link to={'timer'}><Avatar size={256} src={timerImg} /></Link>
+                    <Link to={'/timer'}><Avatar size={256} src={timerImg} /></Link>
                 </Col>
             </Row>
         </div>

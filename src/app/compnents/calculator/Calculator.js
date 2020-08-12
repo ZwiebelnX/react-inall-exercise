@@ -3,6 +3,7 @@ import React from "react";
 import './Calculator.less'
 import CalculatorButton from "./CalculatorButton";
 import {Link} from "react-router-dom";
+import InfoDisplayer from "../utils/InfoDisplayer";
 
 class Calculator extends React.Component {
     constructor(props) {
@@ -43,9 +44,7 @@ class Calculator extends React.Component {
                 <div style={{width: '30%', margin: 'auto'}}>
                     <Row justify={'center'}>
                         <Col span={24}>
-                            <div className='display-container'>
-                                {!this.state.formula ? <h3 style={{marginTop: '20px'}}>please enter formula</h3> : <h1 style={{marginTop: '20px'}}>{this.state.formula}</h1>}
-                            </div>
+                            <InfoDisplayer info={this.state.formula} placeholder={'please enter formula'} />
                         </Col>
                     </Row>
                     <Row className='button-container' justify={'space-between'}>

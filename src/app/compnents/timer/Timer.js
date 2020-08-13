@@ -21,13 +21,16 @@ class Timer extends React.Component {
         }
 
         this.start = () => {
-            this.setState({time: this.state.input})
-            const timer = setInterval(() => {
-                this.setState({time: String(this.state.time - 1)})
-                if (this.state.time === '0') {
-                    clearInterval(timer)
-                    this.setState({time: 'END'})
-                }
+            this.setState({time: 'START'})
+            setTimeout(() => {
+                this.setState({time: this.state.input})
+                const timer = setInterval(() => {
+                    this.setState({time: String(this.state.time - 1)})
+                    if (this.state.time === '0') {
+                        clearInterval(timer)
+                        this.setState({time: 'END'})
+                    }
+                }, 1000)
             }, 1000)
         }
 
